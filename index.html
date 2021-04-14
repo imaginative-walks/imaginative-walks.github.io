@@ -83,13 +83,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="https://github.com/referit3d/referit3d">
+                    <a href="https://github.com/Vision-CAIR/GRaWD">
                         <h4><strong>[ Code ]</strong></h4>
-                    </a>
-                </li>
-                <li>
-                    <a href="#dataset">
-                        <h4><strong>[ Dataset ]</strong></h4>
                     </a>
                 </li>
             </ul>
@@ -103,21 +98,8 @@
                 <b>Abstract</b>
             </h3>
             <p class="text-justify">
-                In this work we study the problem of using referential language to identify common objects in real-world
-                3D scenes. We focus on a challenging setup where the referred object belongs to a fine-grained object
-                class and the underlying scene contains multiple object instances of that class. Due to the scarcity and
-                unsuitability of existent 3D-oriented linguistic resources for this task, we first develop two
-                large-scale and complementary visio-linguistic datasets: i) Sr3D, which contains 83.5K template-based
-                utterances leveraging spatial relations among fine-grained object classes to localize a referred object
-                in a scene, and ii) Nr3D which contains 41.5K natural, free-form, utterances collected by deploying a
-                2-player object reference game in 3D scenes. Using utterances of either datasets, human listeners can
-                recognize the referred object with high (>86%, 92% resp.) accuracy. By tapping on this data, we develop
-                novel neural listeners that can comprehend object-centric natural language and identify the referred
-                object directly in a 3D scene. Our key technical contribution is designing an approach for combining
-                linguistic and geometric information (in the form of 3D point clouds) and creating multi-modal (3D)
-                neural listeners. We also show that architectures which promote object-to-object communication via graph
-                neural networks outperform less context-aware alternatives, and that fine-grained object classification
-                is a bottleneck for language-assisted 3D object identification.
+                We propose a novel loss for generative models, dubbed as GRaWD (Generative Random Walk  Deviation), to improve learning representations of unexplored visual spaces.  Quality learning representation of unseen classes (or styles) is crucial to facilitate novel image generation and better generative understanding of unseen visual classes (a.k.a. Zero-Shot Learning, ZSL). By generating representations of unseen classes from their semantic descriptions, such as attributes or text, Generative ZSL aims at identifying unseen categories discriminatively from seen ones.    
+                We define GRaWD by constructing a dynamic graph, including the seen class/style centers and generated samples in the current mini-batch.  Our loss starts a random walk probability from each center through visual generations produced from hallucinated unseen classes. As a deviation signal, we encourage the random walk to eventually land after t steps in a feature representation that is hard to classify to any of the seen classes. We show that our loss can improve unseen class representation quality on four text-based  ZSL benchmarks on CUB and NABirds datasets and three attribute-based ZSL benchmarks on AWA2, SUN, and aPY datasets. We also study our loss's ability to produce meaningful novel visual art generations on WikiArt dataset. Our experiments and human studies show that our loss can improve StyleGAN1 and StyleGAN2  generation quality, creating novel art that is significantly more preferred. Code will be made available.
             </p>
         </div>
     </div>
