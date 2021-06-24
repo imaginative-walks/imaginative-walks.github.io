@@ -88,38 +88,21 @@
             <h3>
                 <b>Video</b>
             </h3>
-<!--            <video id="v0" width="100%" loop="" muted="" controls="">-->
-<!--                <source src="img/hi_res.mp4" type="video/mp4">-->
-<!--            </video>-->
-            <iframe width="100%" height="400"
+           <video id="v0" width="100%" loop="" muted="" controls="">
+               <source src="img/hi_res.mp4" type="video/mp4">
+           </video>
+<!--             <iframe width="100%" height="400"
                 src="https://www.youtube.com/embed/yEdf24hF_sY">
-            </iframe>
+            </iframe> -->
 
         </div>
 
-    </div>
-
-    <div class="row" id="dataset" style="padding-bottom:30px">
-        <div class="col-md-8 col-md-offset-2">
-            <h3>
-                <b>Dataset</b>
-            </h3>
-            <ul>
-                <li> You can download Nr3D <a href="https://drive.google.com/file/d/1qswKclq4BlnHSGMSgzLmUu8iqdUXD8ZC/view">here</a> (10.7MB) and Sr3D/Sr3D+ <a href="https://drive.google.com/drive/folders/1DS4uQq7fCmbJHeE-rEbO8G1-XatGEqNV">here</a> (19MB / 20MB). </li>
-            </ul>
-            <h4><b>Browse</b></h4>
-            <ul>
-                <li> You can browse Nr3D on ScanNet using our <a href="./data_browser.html"> browser</a>.</li>
-            </ul>
-
-            <br>
-        </div>
     </div>
 
     <div class="row" style="padding-bottom:30px">
         <div class="col-md-8 col-md-offset-2">
             <h3>
-                <b>Method: ReferIt3DNet</b>
+                <b>Method: GRaWD</b>
             </h3>
         </div>
 
@@ -132,14 +115,10 @@
         </div>
 
         <div class="col-md-8 col-md-offset-2">
-            Each object of a 3D scene, represented as a 6D point cloud containing its xyz coordinates and RGB color,
-            is encoded by a visual encoder (e.g., PointNet++), with shared weights. Simultaneously, the utterance
-            describing the referred object (e.g., “<i>the armchair next to the whiteboard</i>”) is processed by a Recurrent Neural
-            Network (RNN). The resulting representations are fused together and processed by a Dynamic Graph Convolution
-            Network (DGCN) which creates an object-centric <i>and</i> scene- (context-) aware representation per object.
-            The output of the DGCN is processed by an MLP classifier that estimates the likelihood of each object to be
-            the referred one. Two auxiliary losses modulate the unfused representations before these are processed by the DGCN
-            via an object-class classifier and a text classifier respectively.
+            Generative Random Walk Deviation loss starts from each seen class center (i.e., ci). It then performs a random walk
+            through generated examples of hallucinated unseen classes using G(su; z) for T steps. The landing probability distribution
+            of the random walk is encouraged to be uniform over the seen classes. For careful deviation from seen classes, the generated
+            images are encouraged to be classified as real by the Discriminator D.
         </div>
     </div>
 
