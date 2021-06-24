@@ -125,7 +125,7 @@
     <div class="row" style="padding-bottom:30px">
         <div class="col-md-8 col-md-offset-2">
             <h3>
-                <b>Method: Motivation</b>
+                <b>Motivation</b>
             </h3>
         </div>
 
@@ -139,6 +139,20 @@
 
         <div class="col-md-8 col-md-offset-2">
             Generative Random Walk Deviation loss encourages generatively visiting the orange realistic space aiming to deviate from seen classes avoiding the less real red space. Our loss starts from each seen class ( in green) performing a random walk though generated examples of hallucinated unseen classes (in orange) for T steps. We then encourage the landing representation to be far/distinguishable from seen classes. With this property, our loss help improve generalized zero-shot learning performance.
+        </div>
+        
+        <div class="col-md-8 col-md-offset-2">
+            <figure>
+                <img src="img/teaser2.png" style="padding-bottom:10px" class="img-responsive" alt="overview">
+                    <figcaption>
+                    </figcaption>
+            </figure>
+        </div>
+
+        <div class="col-md-8 col-md-offset-2">
+            Our generated art images shown on top with orange borders are generated also using our loss when considering known art movements like cubism and high renaissance as seen classes. The bottom part of this figure shows
+the Nearest Neighbors (NN) in the training set (with green
+borders) which are different.
         </div>
     </div>
     
